@@ -1,0 +1,102 @@
+1, New Zealand, 92.89 
+2, Australia, 86.67 
+3, England, 85.04 
+4, Wales, 84.63 
+5, Ireland, 84.40 
+6, South Africa, 81.15 
+7, France, 81.12 
+8, Argentina, 78.39 
+9, Fiji, 77.04 
+10, Samoa, 76.18 
+11, Japan, 76.06 
+12, Scotland, 75.88 
+13, Georgia, 72.62 
+14, Tonga, 72.43 
+15, Italy, 70.53 
+16, USA, 69.32 
+17, Romania, 66.28 
+18, Canada, 65.17 
+19, Uruguay, 62.11 
+20, Namibia, 61.85 
+21, Spain, 61.54 
+22, Russia, 61.10 
+23, Chile, 57.34 
+24, Hong Kong, 57.31 
+25, Korea, 56.70 
+26, Belgium, 56.47 
+27, Zimbabwe, 56.16 
+28, Kenya, 55.89 
+29, Portugal, 55.72 
+30, Germany, 54.78 
+31, Ukraine, 54.07 
+32, Moldova, 53.69 
+33, Netherlands, 51.86 
+34, Poland, 51.22 
+35, Czech Republic, 51.07 
+36, Paraguay, 50.46 
+37, Sri Lanka, 49.79 
+38, Switzerland, 49.49 
+39, Brazil, 49.26 
+40, Tunisia, 49.11 
+41, Madagascar, 48.71 
+42, Kazakhstan, 48.14 
+43, Malta, 48.12 
+44, Lithuania, 48.01 
+45, Trinidad & Tobago, 47.38 
+46, Cook Islands, 47.11 
+47, Colombia, 46.37 
+48, Uganda, 46.35 
+49, Senegal, 45.96 
+50, Cote D'Ivoire, 45.76 
+51, Philippines, 45.12 
+52, Guyana, 44.88 
+53, Croatia, 44.83 
+54, Sweden, 44.67 
+55, Israel, 44.20 
+56, Mexico, 43.61 
+57, Malaysia, 43.53 
+58, Andorra, 43.10 
+59, Singapore, 42.92 
+60, Cayman Islands, 42.87 
+61, Venezuela, 41.65 
+62, Latvia, 41.33 
+63, Botswana, 40.99 
+64, Chinese Taipei, 40.27 
+65, Luxembourg, 40.25 
+66, Bermuda, 40.03 
+67, China, 39.58 
+68, Hungary, 39.21 
+69, Peru, 38.84 
+70, Slovenia, 38.80 
+71, Guam, 38.11 
+72, Thailand, 37.46 
+73, Barbados, 37.39 
+74, India, 37.12 
+75, Nigeria, 37.03 
+76, Jamaica, 36.99 
+77, St Vincent and the Grenadines, 36.84 
+78, Serbia, 36.82 
+79, Pakistan, 36.74 
+80, Zambia, 35.80 
+81, Denmark, 35.73 
+82, Bosnia & Herzegovina, 35.43 
+83, Austria, 35.00 
+84, United Arab Emirates, 34.92 
+85, Bahamas, 34.55 
+86, Uzbekistan, 33.89 
+87, Mauritius, 33.86 
+88, Norway, 32.78 
+89, Swaziland, 32.04 
+90, Bulgaria, 31.98 
+91, Finland, 29.89 
+92, Indonesia, 28.73 
+93, Greece, 28.55 
+94, Morocco, 25.59 
+95, Papua New Guinea, 23.14 
+96, Niue Island, 20.22 
+97, Tahiti, 19.81 
+98, Cameroon, 19.16 
+99, Monaco, 17.59 
+100, Solomon Islands, 16.82 
+101, Vanuatu, 16.73 
+102, American Samoa, 15.72 
