@@ -7,10 +7,10 @@ Usage:
     rugby.py [-htpl <number> -m <team1> <score1> <team2> <score2> [-wn] -f FILE -i INPUT -o OUTPUT]
 
 Arguments:
-    <team_H>
-    <score_H>
-    <team_A>
-    <score_A>
+    <team1>
+    <score1>
+    <team2>
+    <score2>
 
 Options:
     -h, --help                      Prints this help message
@@ -28,15 +28,23 @@ Options:
 import csv
 import operator
 import docopt
+import sys
 
 
 teams = {}
 def read_rankings(INFILE):
-    with open(INFILE, 'r') as f:
-        reader = csv.reader(f, skipinitialspace=True )
-        for row in reader:
-            name = row.pop(1)
-            teams[name] =  float(row[1])
+    try:
+        with open(INFILE, 'r') as f:
+            reader = csv.reader(f, skipinitialspace=True )
+            for row in reader:
+                name = row.pop(1)
+                teams[name] =  float(row[1])
+    except IOError:
+        print "Must supply a ranking file with '-i' if rankings.txt is missing"
+        print "file format:\n"
+        print "1,New Zealand,92.01"
+        print "...\n"
+        sys.exit(0)
 
 
 def print_rankings(upper):
@@ -57,10 +65,7 @@ class Match(object):
         self.gap = self.rankB - self.rankA
         self.diff = int(scoreA) - int(scoreB)
         self.delta = 0
-        if wc:
-            self.wc = True
-        else:
-            self.wc = False
+        self.wc = wc
 
     def calc_core(self):
         if self.diff > 0:
@@ -108,6 +113,7 @@ class Result(object):
         else:
             return 0.1*self.gap
 
+
 if __name__ == '__main__':
     a = docopt.docopt(__doc__)
     if a['-i']:
@@ -121,7 +127,7 @@ if __name__ == '__main__':
         number = a['--lines']
     if a['--match']:
         m = Match(a['<team1>'], a['<score1>'], a['<team2>'], a['<score2>'],
-                  a['-n'], a['-w'])
+                  neutral=a['-n'], wc=a['-w'])
         m.calc_core()
         print "Rankings change:",m.delta
         print
@@ -130,10 +136,9 @@ if __name__ == '__main__':
         with open(a['-f'], 'r') as f:
             reader = csv.reader(f, skipinitialspace=True)
             for row in reader:
-                m = Match(row[0], row[1], row[2], row[3], a['-n'], a['-w'])
+                m = Match(row[0], row[1], row[2], row[3], neutral=a['-n'],
+                          wc=a['-w'])
                 m.calc_core()
-                print "Rankings change:",m.delta
-                print
                 m.update_teams()
 
     if a['-o']:

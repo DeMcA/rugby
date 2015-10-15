@@ -1,21 +1,21 @@
-1, New Zealand, 92.89 
-2, Australia, 86.67 
-3, England, 85.04 
-4, Wales, 84.63 
+1, New Zealand, 92.89
+2, Australia, 89.33 
+3, Wales, 87.31 
+4, South Africa, 84.58 
 5, Ireland, 84.40 
-6, South Africa, 81.15 
-7, France, 81.12 
-8, Argentina, 78.39 
-9, Fiji, 77.04 
-10, Samoa, 76.18 
-11, Japan, 76.06 
-12, Scotland, 75.88 
-13, Georgia, 72.62 
-14, Tonga, 72.43 
-15, Italy, 70.53 
-16, USA, 69.32 
+6, France, 81.12 
+7, Argentina, 80.49 
+8, England, 79.77 
+9, Scotland, 77.13 
+10, Fiji, 76.96 
+11, Japan, 76.51 
+12, Tonga, 71.60 
+13, Italy, 71.46 
+14, Georgia, 71.35 
+15, Samoa, 71.17 
+16, USA, 69.20 
 17, Romania, 66.28 
-18, Canada, 65.17 
+18, Canada, 64.24 
 19, Uruguay, 62.11 
 20, Namibia, 61.85 
 21, Spain, 61.54 
@@ -23,7 +23,7 @@
 23, Chile, 57.34 
 24, Hong Kong, 57.31 
 25, Korea, 56.70 
-26, Belgium, 56.47 
+26, Belgium, 56.65 
 27, Zimbabwe, 56.16 
 28, Kenya, 55.89 
 29, Portugal, 55.72 
@@ -51,7 +51,7 @@
 51, Philippines, 45.12 
 52, Guyana, 44.88 
 53, Croatia, 44.83 
-54, Sweden, 44.67 
+54, Sweden, 44.49 
 55, Israel, 44.20 
 56, Mexico, 43.61 
 57, Malaysia, 43.53 
@@ -77,18 +77,18 @@
 77, St Vincent and the Grenadines, 36.84 
 78, Serbia, 36.82 
 79, Pakistan, 36.74 
-80, Zambia, 35.80 
-81, Denmark, 35.73 
-82, Bosnia & Herzegovina, 35.43 
+80, Bosnia & Herzegovina, 36.18 
+81, Zambia, 35.80 
+82, Denmark, 35.73 
 83, Austria, 35.00 
 84, United Arab Emirates, 34.92 
 85, Bahamas, 34.55 
-86, Uzbekistan, 33.89 
-87, Mauritius, 33.86 
-88, Norway, 32.78 
+86, Norway, 34.00 
+87, Uzbekistan, 33.89 
+88, Mauritius, 33.86 
 89, Swaziland, 32.04 
-90, Bulgaria, 31.98 
-91, Finland, 29.89 
+90, Bulgaria, 30.76 
+91, Finland, 29.15 
 92, Indonesia, 28.73 
 93, Greece, 28.55 
 94, Morocco, 25.59 
@@ -99,4 +99,4 @@
 99, Monaco, 17.59 
 100, Solomon Islands, 16.82 
 101, Vanuatu, 16.73 
-102, American Samoa, 15.72 
+102, American Samoa, 15.72  
