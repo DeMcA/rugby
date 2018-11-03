@@ -68,13 +68,41 @@ class Match(object):
         self.wc = wc # World cup match flag
 
     def calc_core(self):
-        self.delta = self.calc_match_delta()
+        self.delta = self.alt_calc_match_delta()
         if abs(self.diff) > 15:
             self.delta *= 1.5
         if self.wc is True:
             self.delta *= 2
 
+    def alt_calc_match_delta(self):
+    '''
+    An alternative way of calculating match deltas
+
+    All possible deltas are fetched from an array,
+    idx defaults to win vs poor ranked (large negative gap) team
+    First if/elif: idx is increased on lose or draw conditions
+    Second if/elif: idx is increase on playing much higher ranked or similarrly ranked team
+
+    Just in as a demo, not a very clear way of doing this.
+    '''
+        deltas = [0,2,0.1*self.gap+1,-2,0,0.1*self.gap-1,-1,1,0.1*self.gap]
+        idx = 0
+        if self.diff < 0:
+            idx += 3
+        elif self.diff == 0:
+            idx += 6
+        if self.gap >= 10:
+            idx += 1
+        elif self.gap >= -10:
+            idx += 2
+        return deltas[idx]
+
+
     def calc_match_delta(self):
+    '''
+    Standard method for calulating match deltas, using nested if statements.
+    Ranking gap comparisons in separate functions for readability
+    '''
         if self.diff > 0: # Home team wins
             return self.win()
         elif self.diff < 0:
@@ -96,7 +124,7 @@ class Match(object):
         if self.gap >= 10:
             return 0
         else:
-            return 0.1*self.gap + -1
+            return 0.1*self.gap -1
 
     def draw(self):
         if self.gap <= -10:
