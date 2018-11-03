@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
 Rugby Rankings Program
@@ -35,10 +35,10 @@ teams = {}
 def read_rankings(INFILE):
     try:
         with open(INFILE, 'r') as f:
-            reader = csv.reader(f, skipinitialspace=True )
+            reader = csv.reader(f, skipinitialspace=True)
             for row in reader:
                 name = row.pop(1)
-                teams[name] =  float(row[1])
+                teams[name] = float(row[1])
     except IOError:
         print "Must supply a ranking file with '-i' if rankings.txt is missing"
         print "file format:\n"
@@ -48,24 +48,25 @@ def read_rankings(INFILE):
 
 
 def print_rankings(upper):
-    rankings = sorted(teams.items(),key=operator.itemgetter(1),reverse=True)
-    for i in range(0,upper):
-        print i+1,rankings[i][0], rankings[i][1]
+    rankings = sorted(teams.items(), key=operator.itemgetter(1), reverse=True)
+    for i in range(0, upper):
+        print i+1, rankings[i][0], rankings[i][1]
 
 
 class Match(object):
 
     def __init__(self, teamA, scoreA, teamB, scoreB, neutral=False, wc=False):
+        print self, teamA, scoreA, teamB, scoreB, neutral, wc
         self.teamA = teamA
         self.teamB = teamB
         self.rankA = teams[teamA]
         self.rankB = teams[teamB]
         if not neutral:
             self.rankA += 3
-        self.gap = self.rankB - self.rankA
-        self.diff = int(scoreA) - int(scoreB)
-        self.delta = 0
-        self.wc = wc
+        self.gap = self.rankB - self.rankA # Initial gap in rankings
+        self.diff = int(scoreA) - int(scoreB) # Score difference for this match
+        self.delta = 0 # The change that will be applied to the ranking values
+        self.wc = wc # World cup match flag
 
     def calc_core(self):
         if self.diff > 0:
@@ -129,7 +130,7 @@ if __name__ == '__main__':
         m = Match(a['<team1>'], a['<score1>'], a['<team2>'], a['<score2>'],
                   neutral=a['-n'], wc=a['-w'])
         m.calc_core()
-        print "Rankings change:",m.delta
+        print "Rankings change:", m.delta
         print
         m.update_teams()
     if a['-f']:
@@ -143,7 +144,7 @@ if __name__ == '__main__':
 
     if a['-o']:
         OUTPUT = a['-o']
-        rankings = sorted(teams.items(),key=operator.itemgetter(1),reverse=True)
+        rankings = sorted(teams.items(), key=operator.itemgetter(1), reverse=True)
         f = open(OUTPUT, 'w')
         for i in range(len(rankings)):
             f.write(str(i+1)+", "+str(rankings[i][0])+", "+str(rankings[i][1])+"\n")
