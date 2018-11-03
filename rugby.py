@@ -56,7 +56,6 @@ def print_rankings(upper):
 class Match(object):
 
     def __init__(self, teamA, scoreA, teamB, scoreB, neutral=False, wc=False):
-        print self, teamA, scoreA, teamB, scoreB, neutral, wc
         self.teamA = teamA
         self.teamB = teamB
         self.rankA = teams[teamA]
@@ -69,12 +68,12 @@ class Match(object):
         self.wc = wc # World cup match flag
 
     def calc_core(self):
-        if self.diff > 0:
-            self.delta = Result(self.gap).win()
+        if self.diff > 0: # Home team wins
+            self.delta = self.win()
         elif self.diff < 0:
-            self.delta = Result(self.gap).lose()
+            self.delta = self.lose()
         elif self.diff == 0:
-            self.delta = Result(self.gap).draw()
+            self.delta = self.draw()
         if abs(self.diff) > 15:
             self.delta *= 1.5
         if self.wc is True:
@@ -83,12 +82,6 @@ class Match(object):
     def update_teams(self):
         teams[self.teamA] += self.delta
         teams[self.teamB] -= self.delta
-
-
-class Result(object):
-
-    def __init__(self, gap):
-        self.gap = gap
 
     def win(self):
         if self.gap <= -10:
