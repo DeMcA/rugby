@@ -68,20 +68,19 @@ class Match(object):
         self.wc = wc # World cup match flag
 
     def calc_core(self):
-        if self.diff > 0: # Home team wins
-            self.delta = self.win()
-        elif self.diff < 0:
-            self.delta = self.lose()
-        elif self.diff == 0:
-            self.delta = self.draw()
+        self.delta = self.calc_match_delta()
         if abs(self.diff) > 15:
             self.delta *= 1.5
         if self.wc is True:
             self.delta *= 2
 
-    def update_teams(self):
-        teams[self.teamA] += self.delta
-        teams[self.teamB] -= self.delta
+    def calc_match_delta(self):
+        if self.diff > 0: # Home team wins
+            return self.win()
+        elif self.diff < 0:
+            return self.lose()
+        elif self.diff == 0:
+            return self.draw()
 
     def win(self):
         if self.gap <= -10:
@@ -106,6 +105,10 @@ class Match(object):
             return 1
         else:
             return 0.1*self.gap
+
+    def update_teams(self):
+        teams[self.teamA] += self.delta
+        teams[self.teamB] -= self.delta
 
 
 if __name__ == '__main__':
